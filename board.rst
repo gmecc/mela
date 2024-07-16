@@ -58,7 +58,7 @@ For your convenience, some of technical specifications are provided below:
 - Reset: Outer Reset Pin
 - Power: 5-24V 200mW Power Pin / 5V 500mA USB
 
-[x] OK - Open Collector
+[x] OK - Open Collector Output
 
 For more information see the MELA-board datasheet:
 https://github.com/gmecc/mela/blob/main/images/board-env.jpg
