@@ -37,21 +37,23 @@ For your convenience, some of technical specifications are provided below:
 - Processor: RISC-V Ultra Low Power Co-processor
 - CPU frequency: up to 240MHz
 - Internal FlashROM: 32MB
-- External FlashROM: PSRAM 8MB
+- External FlashROM: Octal SPI PSRAM 8MB
+- WiFi: 2.4GHz Wifi - 802.11b/g/n, 3D High Gain Antenna
 - ADC: 16-bit delta-sigma ADC ADS1115 up to 4 channels 0-10V / 0-20mA
 - DAC: 2 8-bit DACs ?
 - Digital Input: 6 Digital Isolated Input [0-24V]
-- Didital Output: 10; 6 Digital Isolated Output OK [0-24V]; 4 Relay [250V 5A]
+- Didital Output: 10; 6 PWM - Digital Isolated Output OK [0-24V]; 4 Relay [250V 5A]
 - GPIO: 3 Digital Input-Output [0-3.3V]
 - RTC: DS1307 with a CR1220 coin cell battery
-- PWM: 6 PWM OK [0-24V]
 - Native USB + USB Serial JTAG + USB OTG
 - UART: 3 RX/TX UART
 - I2C: 2; I2C-1 Isolated input
 - SPI: 2 SPI
-- RS-485 UART2
-- RS-232 UART1
-- Board Indicator: Low power RGB LED
+- RS-485: UART2
+- RS-232: UART1
+- Board Indicator: Low power RGB LED PL9823-F5
+- Control: ON/OFF button
+- RESET: Outer Reset Pin
 - Power: 5-24V
 
 [x] OK - Open Collector
