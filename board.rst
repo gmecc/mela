@@ -115,7 +115,6 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
     " ", " ", "GND", " ", "GND"
 
 
-[x] :
 * P: Power supply;
 * I: Input TTL;
 * I0: Input/Output TTL;
