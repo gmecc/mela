@@ -38,20 +38,21 @@ For your convenience, some of technical specifications are provided below:
 - CPU frequency: up to 240MHz
 - Internal FlashROM: 32MB
 - External FlashROM: PSRAM 8MB
-- Native USB + USB Serial JTAG + USB OTG
-- Low power RGB LED
-- RTC cbm1307 battery CR1025
-- RMT: 8 channels allowing accurate pulse transmit/receive
-- PWM: 6 PWM OK [0-24V]
-- RS-485 UART2
-- RS-232 UART1
-- I2C: 2 I2C
-- SPI: 2 SPI
-- Digital Input: 6 Digital Isolated Input [0-24V]
-- GPIO: 3 Digital Input-Output [0-3.3V]
-- UART: 3 RX/TX UART
 - ADC: 16-bit SAR ADC up to 4 channels 0-10V / 0-20mA
 - DAC: 2 8-bit DACs ?
+- Digital Input: 6 Digital Isolated Input [0-24V]
+- Didital Output: 10; 6 Digital Isolated Output OK [0-24V]; 4 Relay [250V 5A]
+- GPIO: 3 Digital Input-Output [0-3.3V]
+- Low power RGB LED
+- RTC cbm1307 battery CR1025
+- RMT: 6 channels allowing accurate pulse transmit/receive
+- PWM: 6 PWM OK [0-24V]
+- Native USB + USB Serial JTAG + USB OTG
+- UART: 3 RX/TX UART
+- I2C: 2; I2C-1 Isolated input
+- SPI: 2 SPI
+- RS-485 UART2
+- RS-232 UART1
 
 For more information see the MELA-board datasheet:
 https://github.com/gmecc/mela/blob/main/images/board-env.jpg
