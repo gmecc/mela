@@ -47,7 +47,7 @@ For your convenience, some of technical specifications are provided below:
 - Didital Output: 10; 6 PWM - Digital Isolated Output OK [0-24V 2A]; 4 Relay [250V 5A]
 - GPIO: 3 Digital Input-Output TTL [0-3.3V]
 - RTC: DS1307 with a CR1220 coin cell battery
-- Native USB + USB Serial JTAG + USB OTG
+- USB: Native USB + USB Serial JTAG + USB OTG
 - UART: 3 RX/TX UART
 - I2C: 2; I2C-1 Isolated input
 - SPI: 2 SPI
