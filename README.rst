@@ -10,7 +10,7 @@ Installation
 
 Install with mip
 ~~~~~~~~~~~~~~~~
-```Python
+```
 import mip
 mip.install('github:gmecc/mela')
 ```
