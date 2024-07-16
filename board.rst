@@ -41,7 +41,7 @@ For your convenience, some of technical specifications are provided below:
 - ADC: 16-bit SAR ADC up to 4 channels 0-10V / 0-20mA
 - DAC: 2 8-bit DACs ?
 - Digital Input: 6 Digital Isolated Input [0-24V]
-- Didital Output: 10; 6 Digital Isolated Output OK [0-24V]; 4 Relay [250V 5A]
+- Didital Output: 10; 6 Digital Isolated Output OK[x]_ [0-24V]; 4 Relay [250V 5A]
 - GPIO: 3 Digital Input-Output [0-3.3V]
 - Low power RGB LED
 - RTC cbm1307 battery CR1025
@@ -53,6 +53,8 @@ For your convenience, some of technical specifications are provided below:
 - SPI: 2 SPI
 - RS-485 UART2
 - RS-232 UART1
+
+[x] OK - Open Collector
 
 For more information see the MELA-board datasheet:
 https://github.com/gmecc/mela/blob/main/images/board-env.jpg
