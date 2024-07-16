@@ -85,16 +85,16 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
     "12", "IO8", "?"
     "13", "IO19", , "IO", "USB Serial JTAG"
     "14", "IO20", , "IO", "USB Serial JTAG"
-    "15", "IO3", "DI0", "IsI", "Didital Input 0-24V"
-    "16", "IO46", "D1", "IsI", "Didital Input 0-24V"
-    "17", "IO9", "D2", "IsI", "Didital Input 0-24V"
-    "18", "IO10", "D3", "IsI", "Didital Input 0-24V"
-    "19", "IO11", "D4", "IsI", "Didital Input 0-24V"
-    "20", "IO12", "D5", "IsI", "Didital Input 0-24V"
-    "21", "IO13", "D6", "IsI", "Didital Input 0-24V"
-    "22", "IO14", "D7", "IsI", "Didital Input 0-24V"
-    "23", "IO21", "D8", "IsI", "Didital Input 0-24V"
-    "24", "IO47", "D9", "IsI", "Didital Input 0-24V"
+    "15", "IO3", "DI0", "IsI", "Didital Input [0-24V]"
+    "16", "IO46", "D1", "IsI", "Didital Input [0-24V]"
+    "17", "IO9", "D2", "IsI", "Didital Input [0-24V]"
+    "18", "IO10", "D3", "IsI", "Didital Input [0-24V]"
+    "19", "IO11", "D4", "IsI", "Didital Input [0-24V]"
+    "20", "IO12", "D5", "IsI", "Didital Input [0-24V]"
+    "21", "IO13", "D6", "R", "Reley [250V 5A]"
+    "22", "IO14", "D7", "R", "Reley [250V 5A]"
+    "23", "IO21", "D8", "R", "Reley [250V 5A]"
+    "24", "IO47", "D9", "R", "Reley [250V 5A]"
     "25", "IO48", "PWM10", "OC", "PWM"
     "26", "IO48", "PWM10", "OC", "PWM"
     "27", "IO0", "BOOT", "T", "BOOT"
@@ -111,15 +111,16 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
     "38", "IO2", "I2C", "IsIO", "I2C"
     "39", "IO1", "I2C", "IsIO", "I2C"
     "40", "GND", " ", " ", " "
-    " ", " ", "VCC", "P", "VCC 24V 100mA "
+    " ", " ", "VCC", "P", "VCC [24V 100mA]"
     " ", " ", "GND", " ", "GND"
 
 
 * *P*: Power supply;
 * *I*: Input TTL;
 * *I0*: Input/Output TTL;
-* *IsI*: Isolated Input;
-* *IsO*: Isolated Output;
+* *IsI*: Isolated Input [0-24V];
+* *IsO*: Isolated Output [0-24V 2 A];
 * *IsIO*: Isolated Input/Output;
 * *OC*: Open Collector Output;
-* *T*: High Impedance Input (PULL APP);
+* *R*: Relay [250V 5A];
+* *T*: High Impedance Isolated Input (PULL APP);
