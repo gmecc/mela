@@ -67,3 +67,16 @@ For more information see the ESP32 datasheet: https://www.espressif.com/sites/de
 
 MicroPython is implemented on top of the ESP-IDF, Espressif’s development framework for the ESP32.
 This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
+
+
+.. csv-table:: GPIO
+    :header: "Pin", "GPIO", "BOARD", "Type", "Function"
+    :widths: 10, 15, 15, 10, 50
+
+    "1", "GND"
+    "2", "3V3"
+    "3", "EN"
+    "4", "IO4", "MISO", " ", "I2C"
+    "5", "IO5", "MOSI", " ", "I2C"
+    "6", "IO6", "LED", " ", "LED RGB"
+    
