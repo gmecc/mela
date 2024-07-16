@@ -111,15 +111,16 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
     "38", "IO2", "I2C", "IsIO", "I2C"
     "39", "IO1", "I2C", "IsIO", "I2C"
     "40", "GND", " ", " ", " "
-    " ", " ", "VCC", " ", "VCC 24V 100mA "
+    " ", " ", "VCC", "P", "VCC 24V 100mA "
     " ", " ", "GND", " ", "GND"
 
 
-[x] : P: Power supply;
-I: Input TTL;
-I0: Input/Output TTL;
-IsI: Isolated Input;
-IsO: Isolated Output;
-IsIO: Isolated Input/Output;
-OC: Open Collector Output;
-T: High Impedance Input (PULL APP);
+[x] :
+* P: Power supply;
+* I: Input TTL;
+* I0: Input/Output TTL;
+* IsI: Isolated Input;
+* IsO: Isolated Output;
+* IsIO: Isolated Input/Output;
+* OC: Open Collector Output;
+* T: High Impedance Input (PULL APP);
