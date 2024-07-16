@@ -16,7 +16,6 @@ Install with ``mip``
 
 .. code-block:: python
 
-   import mip
    mip.install('github:gmecc/mela')
 
 
@@ -24,13 +23,13 @@ Install with ``mip``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Скачайте библиотеку ``mela`` с репозитария
 https://github.com/gmecc/mela/tree/main/firmware
-и установите на плату.
+и установите на MELA-board.
 
 
 Установка прошивки с библиотекой ``mela``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Скачайте и установите новую прошивку для платы:
+Скачайте и установите новую прошивку для MELA-board:
 
 https://github.com/gmecc/mela/blob/main/firmware/ESP32_GENERIC.bin
 
