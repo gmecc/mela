@@ -20,15 +20,20 @@ Install with ``mip``
    mip.install('github:gmecc/mela')
 
 
-Install package without network
+Установка из GitHub
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Скачайте и установите новую прошивку для платы:
+Скачайте библиотеку ``mela`` с репозитария
 
-https://github.com/gmecc/mela/blob/main/firmware/ESP32_GENERIC.bin
+https://github.com/gmecc/mela/tree/main/firmware
 
+и установите на плату.
 
 Установка прошивки с библиотекой ``mela``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Скачайте и установите новую прошивку для платы:
+
+https://github.com/gmecc/mela/blob/main/firmware/ESP32_GENERIC.bin
 
 
 Classes
