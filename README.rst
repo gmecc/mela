@@ -14,6 +14,7 @@ Installation
 Install with ``mip``
 ~~~~~~~~~~~~~~~~
 Установите библиотеку ``mela`` из репозитария ``mip``:
+
 .. code-block:: python
 
    mip.install('github:gmecc/mela')
