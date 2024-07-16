@@ -10,8 +10,8 @@ Installation
 
 Install with mip
 ~~~~~~~~~~~~~~~~
+
 .. code-block:: python
-   pygments_style = 'sphinx'
 
    import mip
    mip.install('github:gmecc/mela')
