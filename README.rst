@@ -1,17 +1,18 @@
 MELA
 ====
 
-The `mela` module contains specific functions related to the hardware on a particular board.
-To write portable code use functions and classes from the `mela` module.
+The ``mela`` module contains specific functions related to the hardware on a particular board.
+To write portable code use functions and classes from the ``mela`` module.
 To access platform-specific hardware use the appropriate library.
 
-Плата поставляется с установленной библиотекой.
+.. note::
+   Плата поставляется с установленной библиотекой ``mela``.
 
 
 Installation
 ------------
 
-Install with mip
+Install with ``mip``
 ~~~~~~~~~~~~~~~~
 
 .. code-block:: python
@@ -26,7 +27,7 @@ Install package without network
 https://github.com/gmecc/mela/blob/main/firmware/ESP32_GENERIC.bin
 
 
-Установка прошивки с библиотекой mela
+Установка прошивки с библиотекой ``mela``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
