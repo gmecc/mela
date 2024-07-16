@@ -9,15 +9,11 @@ To access platform-specific hardware use the appropriate library.
 Classes
 -------
 
-* Pin
-* PWM
-* DAC
-* ADC
-* HMI
-* I2C bus
-* SPI bus
-* RS-232 bus
-* RS-485 bus
+* Pin - управление входами и выходами
+* HMI - подключение к HMI
+* PWM - выдача импульсов определенной ширины
+* DAC - цифро-аналоговый преобразователь
+* ADC - аналого-цифровой преобразователь 16 бит
 * RTC - часы реального времени
 * Counter
    * счетчик импульсов
@@ -32,3 +28,9 @@ Classes
    * выдача определенного числа импульсов
 * Speed - определение скорости
 * Rotc - позиционирование
+* Remote - выдача импульсов управляющих компанд
+* I2C bus
+* SPI bus
+* RS-232 bus
+* RS-485 bus
+* Memory - информация о памяти
