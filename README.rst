@@ -24,6 +24,7 @@ Install with ``mip``
 Install package without network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Скачайте и установите новую прошивку для платы:
+
 https://github.com/gmecc/mela/blob/main/firmware/ESP32_GENERIC.bin
 
 
