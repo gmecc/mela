@@ -56,7 +56,7 @@ For your convenience, some of technical specifications are provided below:
 - Board Indicator: Low power RGB LED PL9823-F5
 - Control: ON/OFF button
 - Reset: Outer Reset Pin
-- Power: 5-24V 100 mA Power Pin / 5V 500mA USB
+- Power: 5-24V 200mW Power Pin / 5V 500mA USB
 
 [x] OK - Open Collector
 
@@ -112,7 +112,7 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
     "39", "IO1", "I2C", "IsIO", "I2C"
     "40", "GND", " ", " ", " "
     " ", " ", "USB", "P", "VCC [5V 500mA]"
-    " ", " ", "VCC", "P", "VCC [5-24V 100mA]"
+    " ", " ", "VCC", "P", "VCC [5-24V 200mW]"
     " ", " ", "GND", " ", "GND"
 
 
