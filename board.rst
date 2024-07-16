@@ -47,7 +47,7 @@ For your convenience, some of technical specifications are provided below:
 - Digital Input: 6 Digital Isolated Input [0-24V]
 - Didital Output: 10; 6 PWM - Digital Isolated Output OK [0-24V 2A]; 4 Relay [250V 5A]
 - GPIO: 3 Digital Input-Output TTL [3.3V]
-- USB: USB CH340 + USB OTG
+- USB: USB CH340 + USB OTG + USB JTAG
 - UART: 3 RX/TX UART
 - I2C: 2; I2C-1 Isolated input
 - SPI: 2 SPI
@@ -102,10 +102,10 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
     "29", "IO36", "PWM13", "OC", "PWM [24V 2A]"
     "30", "IO37", "PWM14", "OC", "PWM [24V 2A]"
     "31", "IO38", "PWM15", "OC", "PWM [24V 2A]"
-    "32", "IO39", "GPIO39", "I", "Digital Input / JTAG"
-    "33", "IO40", "GPIO40", "I", "Digital Input / JTAG"
-    "34", "IO41", "GPIO41", "I", "Digital Input / JTAG"
-    "35", "IO42", "GPIO42", "I", "Digital Input / JTAG"
+    "32", "IO39", "GPIO39", "IO", "Digital Input / JTAG"
+    "33", "IO40", "GPIO40", "IO", "Digital Input / JTAG"
+    "34", "IO41", "GPIO41", "IO", "Digital Input / JTAG"
+    "35", "IO42", "GPIO42", "IO", "Digital Input / JTAG"
     "36", "RXD0", "RX0 ", "IsIO", "UART0"
     "37", "TXD0", "TX0", "IsIO", "UART0"
     "38", "IO2", "I2C", "IsIO", "I2C"
