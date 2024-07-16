@@ -70,7 +70,7 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
 
 
 .. csv-table:: GPIO
-    :header: "Pin", "GPIO", "BOARD", "Type", "Function"
+    :header: "Pin", "GPIO", "BOARD", "Type" [x]_, "Function"
     :widths: 10, 15, 15, 10, 50
 
     "1", "GND"
@@ -79,4 +79,40 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
     "4", "IO4", "MISO", " ", "I2C"
     "5", "IO5", "MOSI", " ", "I2C"
     "6", "IO6", "LED", " ", "LED RGB"
-    
+    "7", "IO7", "TX", " ", "UART2 RS-485"
+    "8", "IO15", "RX", , "UART2 RS-485"
+    "9", "IO16", "RTC", , "UART2 RS-485"
+    "10", "IO17", "TX", , "UART1 RS-232"
+    "11", "IO18", "RX", , "UART1 RS-232"
+    "12", "IO8"
+    "13", "IO19", , , "USB"
+    "14", "IO20", , , "USB"
+    "15", "IO3", "DI0", "II", "Didital Input 0-24V"
+    "16", "IO46", "D1", "II", "Didital Input 0-24V"
+    "17", "IO9", "D2", "II", "Didital Input 0-24V"
+    "18", "IO10", "D3", "II", "Didital Input 0-24V"
+    "19", "IO11", "D4", "II", "Didital Input 0-24V"
+    "20", "IO12", "D5", "II", "Didital Input 0-24V"
+    "21", "IO13", "D6", "II", "Didital Input 0-24V"
+    "22", "IO14", "D7", "II", "Didital Input 0-24V"
+    "23", "IO21", "D8", "II", "Didital Input 0-24V"
+    "24", "IO47", "D9", "II", "Didital Input 0-24V"
+    "25", "IO48", "PWM10", "OK", "PWM"
+    "26", "IO48", "PWM10", "OK", "PWM"
+    "27", "IO0", "BOOT", "I", "BOOT"
+    "28", "IO35", "PWM12", "OK", "PWM"
+    "29", "IO36", "PWM13", "OK", "PWM"
+    "30", "IO37", "PWM14", "OK", "PWM"
+    "31", "IO38", "PWM15", "OK", "PWM"
+    "32", "IO39", "DI", "I", "Didital Input / JTAG"
+    "33", "IO40", "DI", "I", "Didital Input / JTAG"
+    "34", "IO41", "DI", "I", "Didital Input / JTAG"
+    "35", "IO42", "DI", "I", "Didital Input / JTAG"
+    "36", "RXD0", " ", " ", "UART0"
+    "37", "TXD0", " ", " ", "UART0"
+    "38", "IO2", " ", " ", "I2C"
+    "39", "IO1", " ", " ", "I2C"
+    "40", "GND", " ", " ", " "
+
+
+[x] : P: Power supply; I: Input; II: Isolated input; O: Output; T: High impedance
