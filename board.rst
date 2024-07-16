@@ -70,7 +70,7 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
 
 
 .. csv-table:: GPIO
-    :header: "Pin", "GPIO", "BOARD", "Type" [x]_, "Function"
+    :header: "Pin", "GPIO", "BOARD", "Type"[x]_, "Function"
     :widths: 10, 15, 15, 10, 50
 
     "1", "GND"

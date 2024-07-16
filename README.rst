@@ -5,6 +5,23 @@ The `mela` module contains specific functions related to the hardware on a parti
 To write portable code use functions and classes from the `mela` module.
 To access platform-specific hardware use the appropriate library.
 
+Installation
+------------
+
+Install with mip
+~~~~~~~~~~~~~~~~
+```Python
+import mip
+mip.install('github:gmecc/mela')
+```
+
+Install package without network
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Установка прошивки с библиотекой mela
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 Classes
 -------
