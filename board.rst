@@ -73,7 +73,7 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
 
     "1", "GND"
     "2", "3V3"
-    "3", "EN"
+    "3", "EN", "RESET", , "RESET"
     "4", "IO4", "MISO", " ", "I2C"
     "5", "IO5", "MOSI", " ", "I2C"
     "6", "IO6", "LED", " ", "LED RGB"
@@ -82,7 +82,7 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
     "9", "IO16", "RTC", , "UART2 RS-485"
     "10", "IO17", "TX", , "UART1 RS-232"
     "11", "IO18", "RX", , "UART1 RS-232"
-    "12", "IO8"
+    "12", "IO8", "?"
     "13", "IO19", , , "USB Serial JTAG"
     "14", "IO20", , , "USB Serial JTAG"
     "15", "IO3", "DI0", "II", "Didital Input 0-24V"
@@ -110,7 +110,7 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
     "37", "TXD0", " ", " ", "UART0"
     "38", "IO2", " ", " ", "I2C"
     "39", "IO1", " ", " ", "I2C"
-    "40", "GND", " ", " ", " "
+    "40", "GND", "?", " ", " "
     " ", " ", "VCC", " ", "VCC 24V 100mA "
     " ", " ", "GND", " ", "GND"
 
