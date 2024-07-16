@@ -118,7 +118,7 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
 * *P*: Power supply;
 * *I*: Input TTL;
 * *I0*: Input/Output TTL;
-* *IsI*: Isolated Input [0-24V];
+* *IsI*: Isolated Input [0-24V] V_True > 3V;
 * *IsO*: Isolated Output [0-24V 2 A];
 * *IsIO*: Isolated Input/Output;
 * *OC*: Open Collector Output;
