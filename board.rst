@@ -116,10 +116,10 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
     " ", " ", "GND", " ", "GND"
 
 
-* *P*: Power supply;
 * *I0*: Input/Output TTL;
 * *IsI*: Isolated Input [0-24V] V_True_min = 3V;
 * *IsIO*: Isolated Input/Output [0-24V];
 * *OC*: Open Collector Output [0-24V 2 A];
 * *R*: Relay [250V 5A];
 * *T*: High Impedance Isolated Input (PULL APP);
+* *P*: Power supply
