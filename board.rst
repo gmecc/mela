@@ -56,7 +56,7 @@ For your convenience, some of technical specifications are provided below:
 - Board Indicator: Low power RGB LED PL9823-F5
 - Control: ON/OFF button
 - RESET: Outer Reset Pin
-- Power: 5-24V Power Pin / 5V USB
+- Power: 5-24V Power Pin / 5V 500mA USB
 
 [x] OK - Open Collector
 
