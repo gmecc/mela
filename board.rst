@@ -115,11 +115,11 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
     " ", " ", "GND", " ", "GND"
 
 
-* P: Power supply;
-* I: Input TTL;
-* I0: Input/Output TTL;
-* IsI: Isolated Input;
-* IsO: Isolated Output;
-* IsIO: Isolated Input/Output;
-* OC: Open Collector Output;
-* T: High Impedance Input (PULL APP);
+* *P*: Power supply;
+* *I*: Input TTL;
+* *I0*: Input/Output TTL;
+* *IsI*: Isolated Input;
+* *IsO*: Isolated Output;
+* *IsIO*: Isolated Input/Output;
+* *OC*: Open Collector Output;
+* *T*: High Impedance Input (PULL APP);
