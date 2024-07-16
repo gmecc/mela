@@ -73,7 +73,7 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
 
     "1", "GND"
     "2", "3V3"
-    "3", "EN", "RESET", "I", "RESET"
+    "3", "EN", "RESET", "T", "RESET"
     "4", "IO4", "MISO", "IsIO", "I2C"
     "5", "IO5", "MOSI", "IsIO", "I2C"
     "6", "IO6", "LED", "O", "LED RGB"
