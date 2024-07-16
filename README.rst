@@ -28,7 +28,7 @@ Install package without network
 Classes
 -------
 
-* Pin - управление входами и выходами
+* ``Pin`` - управление входами и выходами
 * Led - управление индикатором Led GRB
 * HMI - подключение к HMI
 * PWM
