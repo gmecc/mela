@@ -5,6 +5,9 @@ The `mela` module contains specific functions related to the hardware on a parti
 To write portable code use functions and classes from the `mela` module.
 To access platform-specific hardware use the appropriate library.
 
+Плата поставляется с установленной библиотекой.
+
+
 Installation
 ------------
 
@@ -19,6 +22,8 @@ Install with mip
 
 Install package without network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Скачайте и установите новую прошивку для платы:
+https://github.com/gmecc/mela/blob/main/firmware/ESP32_GENERIC.bin
 
 
 Установка прошивки с библиотекой mela
@@ -29,7 +34,7 @@ Classes
 -------
 
 * ``Pin`` - управление входами и выходами
-* ``Led`` - управление индикатором Led GRB
+* ``Led`` - управление встроенным индикатором Led GRB
 * ``HMI`` - подключение к HMI
 * ``PWM`` - генератор импульсов; генератор импульсов с заданной скважностью
 * ``DAC`` - цифро-аналоговый преобразователь 12 бит
