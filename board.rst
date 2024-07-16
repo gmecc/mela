@@ -34,6 +34,8 @@ operating modes, internal functioning, etc.
 
 For your convenience, some of technical specifications are provided below:
 
+**MELA F1**
+
 - Architecture: Xtensa Dual-Core 32-bit LX7
 - Processor: RISC-V Ultra Low Power Co-processor
 - CPU frequency: up to 240MHz
