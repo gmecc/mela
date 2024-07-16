@@ -38,14 +38,12 @@ For your convenience, some of technical specifications are provided below:
 - CPU frequency: up to 240MHz
 - Internal FlashROM: 32MB
 - External FlashROM: PSRAM 8MB
-- ADC: 16-bit SAR ADC up to 4 channels 0-10V / 0-20mA
+- ADC: 16-bit delta-sigma ADC ADS1115 up to 4 channels 0-10V / 0-20mA
 - DAC: 2 8-bit DACs ?
 - Digital Input: 6 Digital Isolated Input [0-24V]
-- Didital Output: 10; 6 Digital Isolated Output OK[x]_ [0-24V]; 4 Relay [250V 5A]
+- Didital Output: 10; 6 Digital Isolated Output OK [0-24V]; 4 Relay [250V 5A]
 - GPIO: 3 Digital Input-Output [0-3.3V]
-- Low power RGB LED
-- RTC cbm1307 battery CR1025
-- RMT: 6 channels allowing accurate pulse transmit/receive
+- RTC: DS1307 with a CR1220 coin cell battery
 - PWM: 6 PWM OK [0-24V]
 - Native USB + USB Serial JTAG + USB OTG
 - UART: 3 RX/TX UART
@@ -53,6 +51,8 @@ For your convenience, some of technical specifications are provided below:
 - SPI: 2 SPI
 - RS-485 UART2
 - RS-232 UART1
+- Board Indicator: Low power RGB LED
+- Power: 5-24V
 
 [x] OK - Open Collector
 
