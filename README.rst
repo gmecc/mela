@@ -28,7 +28,6 @@ https://github.com/gmecc/mela/tree/main/firmware
 и установите на MELA-board.
 
 
-
 Установка прошивки с библиотекой ``mela``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

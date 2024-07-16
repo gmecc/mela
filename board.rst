@@ -33,37 +33,28 @@ operating modes, internal functioning, etc.
 
 For your convenience, some of technical specifications are provided below:
 
-- Architecture: Xtensa Dual-Core 32-bit LX6
-
+- Architecture: Xtensa Dual-Core 32-bit LX7
+- Processor: RISC-V Ultra Low Power Co-processor
 - CPU frequency: up to 240MHz
-
-- Total RAM available: 528KB (part of it reserved for system)
-
-- BootROM: 448KB
-
-- Internal FlashROM: none
-
-- External FlashROM: code and data, via SPI Flash; usual size 4MB
-
-- GPIO: 34 (GPIOs are multiplexed with other functions, including external FlashROM, UART, etc.)
-
-- UART: 3 RX/TX UART (no hardware handshaking), one TX-only UART
-
-- SPI: 4 SPI interfaces (one used for FlashROM)
-
-- I2C: 2 I2C (bitbang implementation available on any pins)
-
-- I2S: 2
-
-- ADC: 12-bit SAR ADC up to 18 channels
-
-- DAC: 2 8-bit DACs
-
+- Internal FlashROM: 32MB
+- External FlashROM: PSRAM 8MB
+- Native USB + USB Serial JTAG + USB OTG
+- Low power RGB LED
+- RTC cbm1307 battery CR1025
 - RMT: 8 channels allowing accurate pulse transmit/receive
+- PWM: 6 PWM OK [0-24V]
+- RS-485 UART2
+- RS-232 UART1
+- I2C: 2 I2C
+- SPI: 2 SPI
+- Digital Input: 6 Digital Isolated Input [0-24V]
+- GPIO: 3 Digital Input-Output [0-3.3V]
+- UART: 3 RX/TX UART
+- ADC: 16-bit SAR ADC up to 4 channels 0-10V / 0-20mA
+- DAC: 2 8-bit DACs ?
 
-- Programming: using BootROM bootloader from UART - due to external FlashROM and always-available BootROM bootloader, the ESP32 is not brickable
-
-For more information see the ESP32 datasheet: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
+For more information see the MELA-board datasheet:
+https://github.com/gmecc/mela/blob/main/images/board-env.jpg
 
 MicroPython is implemented on top of the ESP-IDF, Espressif’s development framework for the ESP32.
 This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
@@ -85,8 +76,8 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
     "10", "IO17", "TX", , "UART1 RS-232"
     "11", "IO18", "RX", , "UART1 RS-232"
     "12", "IO8"
-    "13", "IO19", , , "USB0"
-    "14", "IO20", , , "USB0"
+    "13", "IO19", , , "USB Serial JTAG"
+    "14", "IO20", , , "USB Serial JTAG"
     "15", "IO3", "DI0", "II", "Didital Input 0-24V"
     "16", "IO46", "D1", "II", "Didital Input 0-24V"
     "17", "IO9", "D2", "II", "Didital Input 0-24V"
