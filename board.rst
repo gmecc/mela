@@ -111,6 +111,7 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
     "38", "IO2", "I2C", "IsIO", "I2C"
     "39", "IO1", "I2C", "IsIO", "I2C"
     "40", "GND", " ", " ", " "
+    " ", " ", "USB", "P", "VCC [5V 500mA]"
     " ", " ", "VCC", "P", "VCC [24V 100mA]"
     " ", " ", "GND", " ", "GND"
 
