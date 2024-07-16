@@ -52,8 +52,8 @@ For your convenience, some of technical specifications are provided below:
 - UART: 3 RX/TX UART
 - I2C: 2; I2C-1 Isolated input
 - SPI: 2 SPI
-- RS-485: UART2
 - RS-232: UART1
+- RS-485: UART2
 - Board Indicator: Low power RGB LED PL9823-F5
 - Control: ON/OFF button
 - RESET: Outer Reset Pin
