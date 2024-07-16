@@ -28,6 +28,7 @@ Technical specifications and SoC datasheets
 -------------------------------------------
 The datasheets and other reference material for ESP32 chip are available
 from the vendor site: https://www.espressif.com/en/support/download/documents?keys=esp32 .
+
 They are the primary reference for the chip technical specifications, capabilities,
 operating modes, internal functioning, etc.
 
