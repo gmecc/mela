@@ -44,7 +44,7 @@ For your convenience, some of technical specifications are provided below:
 - WiFi: 2.4GHz Wifi - 802.11b/g/n, 3D High Gain Antenna
 - ADC: 16-bit delta-sigma ADC ADS1115 up to 4 channels 860SPS [0-10V / 0-20mA]
 - Digital Input: 6 Digital Isolated Input [0-24V]
-- Didital Output: 10; 6 PWM - Digital Isolated Output OK [0-24V]; 4 Relay [250V 5A]
+- Didital Output: 10; 6 PWM - Digital Isolated Output OK [0-24V 2A]; 4 Relay [250V 5A]
 - GPIO: 3 Digital Input-Output [0-3.3V]
 - RTC: DS1307 with a CR1220 coin cell battery
 - Native USB + USB Serial JTAG + USB OTG
