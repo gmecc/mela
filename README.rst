@@ -10,10 +10,12 @@ Installation
 
 Install with mip
 ~~~~~~~~~~~~~~~~
-```
-import mip
-mip.install('github:gmecc/mela')
-```
+.. code-block:: python
+   pygments_style = 'sphinx'
+
+   import mip
+   mip.install('github:gmecc/mela')
+
 
 Install package without network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
