@@ -5,7 +5,7 @@ The ``mela`` module contains specific functions related to the hardware on a par
 To write portable code use functions and classes from the ``mela`` module.
 To access platform-specific hardware use the appropriate library.
 
-Оригинальная плата MELA-board поставляется с установленной библиотекой ``mela``.
+The original ``MELA-board`` comes with the ``mela`` library installed.
 
 
 Installation
@@ -13,7 +13,7 @@ Installation
 
 Install with ``mip``
 ~~~~~~~~~~~~~~~~
-Установите библиотеку ``mela`` из репозитария ``mip``:
+Install the ``mela`` library from the ``mip`` repository::
 
 .. code-block:: python
 
@@ -21,17 +21,17 @@ Install with ``mip``
 
 
 
-Установка из GitHub
+Installation from GitHub
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Скачайте библиотеку ``mela`` с репозитария
+Download the ``mela`` library from the repository
 https://github.com/gmecc/mela/tree/main/firmware
-и установите на MELA-board.
+and install it on MELA-board.
 
 
-Установка прошивки с библиотекой ``mela``
+Installing firmware with the ``mela`` library
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Скачайте и установите новую прошивку для MELA-board:
+Download and install new firmware for ``MELA-board``:
 
 https://github.com/gmecc/mela/blob/main/firmware/ESP32_GENERIC.bin
 
@@ -44,7 +44,7 @@ Classes
 * ``Button`` - устранение дребезга контактов
 * ``Led`` - управление встроенным индикатором Led GRB
 * ``HMI`` - подключение к HMI
-* ``ADC`` - аналого-цифровой преобразователь 
+* ``ADC`` - аналого-цифровой преобразователь
 * ``RTC`` - часы реального времени
 * ``Shedule`` - календарь
 * ``Timer`` - таймер
