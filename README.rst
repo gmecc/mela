@@ -16,6 +16,7 @@ Install with ``mip``
 Install the ``mela`` library from the ``mip`` repository:
 
 .. code-block:: python
+
    mip.install('github:gmecc/mela')
 
 
@@ -28,7 +29,7 @@ and install it on MELA-board.
 
 
 Installing firmware with the ``mela`` library
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download and install new firmware for ``MELA-board``:
 
