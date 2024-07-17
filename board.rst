@@ -5,34 +5,37 @@ The ESP32 is a popular WiFi and Bluetooth enabled System-on-Chip (SoC) by Espres
 
 Multitude of boards
 -------------------
+``MELA-board`` является контроллером для промышленного использования на основе
+``Python-платформы`` с открытым кодом на основе микроконтроллера ESP32-S3.
 
-There is a multitude of modules and boards from different sources which carry the ESP32 chip.
-MicroPython tries to provide a generic port which would run on as many boards/modules as possible,
-but there may be limitations. Espressif development boards are taken
-as reference for the port (for example, testing is performed on them).
-For any board you are using please make sure you have a datasheet,
-schematics and other reference materials so you can look up any board-specific functions.
+``MELA-board`` для управления внешними устройствами имеет изолированные входы-выходы,
+порты обмена данными RS-485, RS-232, SPI, I2C.
 
-To make a generic ESP32 port and support as many boards as possible
-the following design and implementation decision were made:
+Для визуального контроля и ручной настройки ``MELA-board`` имеет возможность
+подключения HMI по протоколам ``modbus RTU`` и ``modbus TCP``.
 
-GPIO pin numbering is based on ESP32 chip numbering.
-Please have the manual/pin diagram of your board at hand to find correspondence
-between your board pins and actual ESP32 pins.
+Использование ``Python-платформы`` с открытым кодом для управления ``MELA-board``
+позволяет опираться в разработках на большое количество прикладных библиотек и
+делает процесс написания и отладки программ простым и наглядным.
 
-All pins are supported by MicroPython but not all are usable on any given board.
-For example pins that are connected to external SPI flash should not be used,
-and a board may only expose a certain selection of pins.
+Нумерация контактов ``MELA-board`` не соответствует нумерации контроллера
+ESP32. Для установления необходимых номеров контактов приведена таблица пинов.
 
-Technical specifications and SoC datasheets
+Прикладная библиотека ``mela`` предназначена для адаптации известных классов
+``micropython`` под конфигурацию ``MELA-board``. При создании реальных проектов
+для избежания возможных ошибок рекомендуется пользоваться прикладной
+библиотекой ``mela``. Однако, типовые библиотеки ``micropython`` также можно
+использовать при внимательной настройке параметров.
+
+Technical specifications
 -------------------------------------------
-The datasheets and other reference material for ESP32 chip are available
-from the vendor site: https://www.espressif.com/en/support/download/documents?keys=esp32 .
+The datasheets and other reference material for ESP32-S3 chip are available
+from the vendor site: https://www.espressif.com/en/products/socs/esp32-s3.
 
 They are the primary reference for the chip technical specifications, capabilities,
 operating modes, internal functioning, etc.
 
-For your convenience, some of technical specifications are provided below:
+For your convenience, below are some technical characteristics of ``MELA-board``:
 
 **MELA F1**
 
