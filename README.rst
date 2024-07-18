@@ -1,81 +1,127 @@
-MELA
-====
+General information about the MELA board
+========================================
 
-The ``mela`` module contains specific functions related to the hardware on a particular board.
-To write portable code use functions and classes from the ``mela`` module.
-To access platform-specific hardware use the appropriate library.
+``MELA-board`` является контроллером для промышленного использования на основе
+``Python-платформы`` с открытым кодом на основе микроконтроллера ESP32-S3.
 
-The original ``MELA-board`` comes with the ``mela`` library installed.
+``MELA-board`` для управления внешними устройствами имеет изолированные входы-выходы,
+порты обмена данными RS-485, RS-232, SPI, I2C, а также встоенный модуль WiFi.
+
+Для визуального контроля и ручной настройки ``MELA-board`` имеет возможность
+подключения HMI по протоколам ``modbus RTU`` и ``modbus TCP``.
+
+Использование ``Python-платформы`` с открытым кодом для управления ``MELA-board``
+позволяет опираться в разработках на большое количество прикладных библиотек и
+делает процесс написания и отладки программ простым и наглядным.
+
+Нумерация контактов ``MELA-board`` не соответствует нумерации контроллера
+ESP32. Для установления необходимых номеров контактов приведена таблица пинов.
+
+Прикладная библиотека ``mela``
+------------------------------
+
+Прикладная библиотека ``mela`` предназначена для адаптации известных классов
+``micropython`` под конфигурацию ``MELA-board``. При создании реальных проектов
+для избежания возможных ошибок рекомендуется пользоваться прикладной
+библиотекой ``mela``. Однако, типовые библиотеки ``micropython`` также можно
+использовать при внимательной настройке параметров.
+
+Technical specifications
+-------------------------------------------
+The datasheets and other reference material for ESP32-S3 chip are available
+from the vendor site: https://www.espressif.com/en/products/socs/esp32-s3.
+
+They are the primary reference for the chip technical specifications, capabilities,
+operating modes, internal functioning, etc.
+
+For your convenience, below are some technical characteristics of ``MELA-board``:
+
+**MELA F1**
+
+- Architecture: Xtensa Dual-Core 32-bit LX7
+- Processor: RISC-V Ultra Low Power Co-processor
+- CPU frequency: up to 240MHz
+- Internal FlashROM: 32MB
+- External FlashROM: Octal SPI PSRAM 8MB
+- WiFi: 2.4GHz Wifi - 802.11b/g/n, 3D High Gain Antenna
+- RTC: DS1307 with a CR1220 coin cell battery
+- ADC: 16-bit delta-sigma ADC ADS1115 up to 4 channels 860SPS [0-10V / 0-20mA]
+- Digital Input: 6 Digital Isolated Input [0-24V]
+- Didital Output: 10; 6 PWM - Digital Isolated Output OK [0-24V 2A]; 4 Relay [250V 5A]
+- GPIO: 3 Digital Input-Output TTL [3.3V]
+- USB: USB CH340 + USB OTG + USB JTAG
+- UART: 3 RX/TX UART
+- I2C: 2; I2C-1 Isolated input
+- SPI: 2 SPI
+- RS-232: UART1
+- RS-485: UART2
+- Board Indicator: Low power RGB LED PL9823-F5
+- Control: ON/OFF button
+- Reset: Outer Reset Pin
+- Power: 5-24V 200mW Power Pin / 5V 500mA USB
+
+[x] OK - Open Collector Output
+
+For more information see the MELA-board datasheet:
+https://github.com/gmecc/mela/blob/main/images/board-env.jpg
+
+MicroPython is implemented on top of the ESP-IDF, Espressif’s development framework for the ESP32.
+This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
 
 
-Installation
-------------
+.. csv-table:: GPIO
+    :header: "Pin", "GPIO", "BOARD", "Type", "Function"
+    :widths: 10, 15, 15, 10, 50
 
-Install with ``mip``
-~~~~~~~~~~~~~~~~
-Install the ``mela`` library from the ``mip`` repository:
+    "1", "GND"
+    "2", "3V3"
+    "3", "EN", "RESET", "T", "RESET"
+    "4", "IO4", "MISO", "IsIO", "I2C"
+    "5", "IO5", "MOSI", "IsIO", "I2C"
+    "6", "IO6", "LED", "O", "LED RGB"
+    "7", "IO7", "TX", "IsIO", "UART2 RS-485"
+    "8", "IO15", "RX", "IsIO", "UART2 RS-485"
+    "9", "IO16", "RTC", "IsIO", "UART2 RS-485"
+    "10", "IO17", "TX", "IsIO", "UART1 RS-232"
+    "11", "IO18", "RX", "IsIO", "UART1 RS-232"
+    "12", "IO8", "?"
+    "13", "IO19", , "IO", "USB Serial JTAG"
+    "14", "IO20", , "IO", "USB Serial JTAG"
+    "15", "IO3", "DI0", "IsI", "Digital Input [0-24V]"
+    "16", "IO46", "D1", "IsI", "Digital Input [0-24V]"
+    "17", "IO9", "D2", "IsI", "Digital Input [0-24V]"
+    "18", "IO10", "D3", "IsI", "Digital Input [0-24V]"
+    "19", "IO11", "D4", "IsI", "Digital Input [0-24V]"
+    "20", "IO12", "D5", "IsI", "Digital Input [0-24V]"
+    "21", "IO13", "D6", "R", "Reley [250V 5A]"
+    "22", "IO14", "D7", "R", "Reley [250V 5A]"
+    "23", "IO21", "D8", "R", "Reley [250V 5A]"
+    "24", "IO47", "D9", "R", "Reley [250V 5A]"
+    "25", "IO48", "PWM10", "OC", "PWM [24V 2A]"
+    "26", "IO48", "PWM10", "OC", "PWM [24V 2A]"
+    "27", "IO0", "BOOT", "T", "BOOT"
+    "28", "IO35", "PWM12", "OC", "PWM [24V 2A]"
+    "29", "IO36", "PWM13", "OC", "PWM [24V 2A]"
+    "30", "IO37", "PWM14", "OC", "PWM [24V 2A]"
+    "31", "IO38", "PWM15", "OC", "PWM [24V 2A]"
+    "32", "IO39", "GPIO39", "IO", "Digital Input / JTAG"
+    "33", "IO40", "GPIO40", "IO", "Digital Input / JTAG"
+    "34", "IO41", "GPIO41", "IO", "Digital Input / JTAG"
+    "35", "IO42", "GPIO42", "IO", "Digital Input / JTAG"
+    "36", "RXD0", "RX0 ", "IsIO", "UART0"
+    "37", "TXD0", "TX0", "IsIO", "UART0"
+    "38", "IO2", "I2C", "IsIO", "I2C"
+    "39", "IO1", "I2C", "IsIO", "I2C"
+    "40", "GND", " ", " ", " "
+    " ", " ", "USB", "P", "VCC [5V 500mA]"
+    " ", " ", "VCC", "P", "VCC [5-24V 200mW]"
+    " ", " ", "GND", " ", "GND"
 
-.. code-block:: python
 
-   mip.install('github:gmecc/mela')
-
-
-
-Installation from GitHub
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Download the ``mela`` library from the repository
-https://github.com/gmecc/mela/tree/main/firmware
-and install it on MELA-board:
-
-
-
-Installing firmware with the ``mela`` library
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Download new firmware for ``MELA-board``:
-
-https://github.com/gmecc/mela/blob/main/firmware/ESP32_GENERIC.bin
-
-Clear controller memory:
-
-.. code-block:: python
-
-   python -m esptool --chip esp32-s3 erase_flash
-
-Install new firmware:
-
-.. code-block:: python
-
-   python -m esptool --chip esp32s3 -p <port> write_flash -z 0 <name_firmware>.bin
-
-
-Classes
--------
-
-* ``Pin`` - управление входами и выходами
-* ``Button`` - устранение дребезга контактов
-* ``Led`` - управление встроенным индикатором Led GRB
-* ``HMI`` - подключение к HMI
-* ``ADC`` - аналого-цифровой преобразователь
-* ``RTC`` - часы реального времени
-* ``Shedule`` - календарь
-* ``Timer`` - таймер
-* ``PWM`` - генератор импульсов
-* ``Counter`` - счетчик импульсов
-* ``Encoder`` - чтение данных с энкодера
-* ``Impulse`` - генератор пакетов импульсов
-* ``Speed`` - определение скорости
-* ``Remote`` - генератор импульсов управляющих команд
-* ``Inv`` - обмен данными с преобразователями частоты
-* ``Measure`` - обмен данными с датчиками по протоколу modbusRTU
-* ``Pid`` - ПИД-регулятор
-* ``Position`` - позиционирование
-* ``Keyboard`` - десятичная клавиатура
-* ``Indicator`` - 7-ми сегментный индикатор
-* ``Potentiometer`` - работа с внешним потенциометром
-* ``I2C`` - обмен даммыми по протоколу I2C
-* ``SPI`` - обмен даммыми по протоколу SPI
-* ``RS-232`` - обмен даммыми через порт RS-232
-* ``RS-485`` - обмен даммыми через порт RS-485
-* ``Memory`` - информация о памяти
-* ``Set`` - настройка параметров работы контроллера
+* *I0*: Input/Output TTL;
+* *IsI*: Isolated Input [0-24V] V_True_min = 3V;
+* *IsIO*: Isolated Input/Output [0-24V];
+* *OC*: Open Collector Output [0-24V 2 A];
+* *R*: Relay [250V 5A];
+* *T*: High Impedance Isolated Input (PULL APP);
+* *P*: Power supply
