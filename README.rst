@@ -124,14 +124,14 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
     "38", "IO2", "MISO1", "IsIO", "I2C1 MISO"
     "39", "IO1", "MOSI1", "IsIO", "I2C1 MOSI"
     "40", "GND", "GND", " ", "GND"
-    " ", " ", "AI0+", " ", "Analog Input 16-bit ADC [0-10V / 0-20mA]"
-    " ", " ", "AI0-", " ", "Analog Input 16-bit ADC [0-10V / 0-20mA]"
-    " ", " ", "AI1+", " ", "Analog Input 16-bit ADC [0-10V / 0-20mA]"
-    " ", " ", "AI1-", " ", "Analog Input 16-bit ADC [0-10V / 0-20mA]"
-    " ", " ", "AI2+", " ", "Analog Input 16-bit ADC [0-10V / 0-20mA]"
-    " ", " ", "AI2-", " ", "Analog Input 16-bit ADC [0-10V / 0-20mA]"
-    " ", " ", "AI3+", " ", "Analog Input 16-bit ADC [0-10V / 0-20mA]"
-    " ", " ", "AI3-", " ", "Analog Input 16-bit ADC [0-10V / 0-20mA]"
+    " ", " ", "AI0+", "AI", "Analog Input 16-bit ADC [0-10V / 0-20mA]"
+    " ", " ", "AI0-", "AI", "Analog Input 16-bit ADC [0-10V / 0-20mA]"
+    " ", " ", "AI1+", "AI", "Analog Input 16-bit ADC [0-10V / 0-20mA]"
+    " ", " ", "AI1-", "AI", "Analog Input 16-bit ADC [0-10V / 0-20mA]"
+    " ", " ", "AI2+", "AI", "Analog Input 16-bit ADC [0-10V / 0-20mA]"
+    " ", " ", "AI2-", "AI", "Analog Input 16-bit ADC [0-10V / 0-20mA]"
+    " ", " ", "AI3+", "AI", "Analog Input 16-bit ADC [0-10V / 0-20mA]"
+    " ", " ", "AI3-", "AI", "Analog Input 16-bit ADC [0-10V / 0-20mA]"
     " ", " ", "USB", "P", "VCC [5V 500mA]"
     " ", " ", "VCC", "P", "VCC [5-24V 200mW]"
 
@@ -142,4 +142,5 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
 * *OC*: Open Collector Output [0-24V 2 A];
 * *R*: Relay [250V 5A];
 * *T*: High Impedance Isolated Input (PULL APP);
-* *P*: Power supply
+* *P*: Power supply;
+* *AI*: Analog Input
