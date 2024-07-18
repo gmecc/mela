@@ -61,6 +61,7 @@ For your convenience, below are some technical characteristics of ``MELA-board``
 - Board Indicator: Low power RGB LED PL9823-F5
 - Control: ON/OFF button
 - Reset: Outer Reset Pin
+- Boot: Outer Boot Pin
 - Power: 5-24V 200mW Power Pin / 5V 500mA USB
 
 The board can be powered from a USB connector with a voltage of 5 volts.
