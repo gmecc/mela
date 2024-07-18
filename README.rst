@@ -48,7 +48,7 @@ For your convenience, below are some technical characteristics of ``MELA-board``
 - External FlashROM: Octal SPI PSRAM 8MB
 - WiFi: 2.4GHz Wifi - 802.11b/g/n, 3D High Gain Antenna
 - RTC: DS1307 with a CR1220 coin cell battery
-- ADC: 16-bit delta-sigma ADC ADS1115 up to 4 channels 860SPS [0-10V / 0-20mA]
+- ADC: 16-bit delta-sigma ADC ADS1115 up to 4 differentials channels 860SPS [0-10V / 0-20mA]
 - Digital Input: 6 Digital Isolated Input [0-24V]
 - Didital Output: 10; 6 PWM - Digital Isolated Output OK [0-24V 2A]; 4 Relay [250V 5A]
 - GPIO: 3 Digital Input-Output TTL [3.3V]
@@ -124,6 +124,14 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
     "38", "IO2", "MISO1", "IsIO", "I2C1 MISO"
     "39", "IO1", "MOSI1", "IsIO", "I2C1 MOSI"
     "40", "GND", "GND", " ", "GND"
+    " ", " ", "AI0+", " ", "Analog Input ADC [0-10V / 0-20mA]"
+    " ", " ", "AI0-", " ", "Analog Input ADC [0-10V / 0-20mA]"
+    " ", " ", "AI1+", " ", "Analog Input ADC [0-10V / 0-20mA]"
+    " ", " ", "AI1-", " ", "Analog Input ADC [0-10V / 0-20mA]"
+    " ", " ", "AI2+", " ", "Analog Input ADC [0-10V / 0-20mA]"
+    " ", " ", "AI2-", " ", "Analog Input ADC [0-10V / 0-20mA]"
+    " ", " ", "AI3+", " ", "Analog Input ADC [0-10V / 0-20mA]"
+    " ", " ", "AI3-", " ", "Analog Input ADC [0-10V / 0-20mA]"
     " ", " ", "USB", "P", "VCC [5V 500mA]"
     " ", " ", "VCC", "P", "VCC [5-24V 200mW]"
 
