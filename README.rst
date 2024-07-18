@@ -29,7 +29,7 @@ and install it on MELA-board:
 
 .. code-block:: python
 
-   python -m esptool --chip esp32s3 -p com38 write_flash -z 0 <name_firmware>.bin
+   python -m esptool --chip esp32s3 -p <port> write_flash -z 0 <name_firmware>.bin
 
 
 Installing firmware with the ``mela`` library
