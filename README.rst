@@ -50,7 +50,7 @@ For your convenience, below are some technical characteristics of ``MELA-board``
 - RTC: DS1307 with a CR1220 coin cell battery
 - ADC: 16-bit delta-sigma ADC ADS1115 up to 4 differentials channels 860SPS [0-10V / 0-20mA]
 - Digital Input: 6 Digital Isolated Input [0-24V]
-- Didital Output: 10; 6 PWM - Digital Isolated Output OK [0-24V 2A]; 4 Relay [250V 5A]
+- Didital Output: 10; 6 PWM - Digital Isolated Output OC [0-24V 2A]; 4 Relay [250V 5A]
 - GPIO: 3 Digital Input-Output TTL [3.3V]
 - USB: USB CH340 + USB OTG + USB JTAG
 - UART: 3 RX/TX UART
@@ -80,8 +80,8 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
     "1", "GND"
     "2", "3V3"
     "3", "EN", "RESET", "T", "Outer RESET"
-    "4", "IO4", "MISO0", "IsIO", "I2C0 MISO"
-    "5", "IO5", "MOSI0", "IsIO", "I2C0 MOSI"
+    "4", "IO4", "SDA0", "IsIO", "I2C0 SDAO"
+    "5", "IO5", "SDL0", "IsIO", "I2C0 SDLI"
     "6", "IO6", "LED", "O", "LED RGB"
     "7", "IO7", "RS-485 TX", "IsIO", "UART2 RS-485 TX"
     "8", "IO15", "RS-485 RX", "IsIO", "UART2 RS-485 RX"
@@ -122,8 +122,8 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
     "35", "IO42", "GPIO42", "IO", "Digital Input / JTAG / SPI"
     "36", "RXD0", "RX0", "IsIO", "UART0 RX"
     "37", "TXD0", "TX0", "IsIO", "UART0 TX"
-    "38", "IO2", "MISO1", "IsIO", "I2C1 MISO"
-    "39", "IO1", "MOSI1", "IsIO", "I2C1 MOSI"
+    "38", "IO2", "SDA1", "IsIO", "I2C1 SDAO"
+    "39", "IO1", "SDL1", "IsIO", "I2C1 SDLI"
     "40", "GND", "GND", " ", "GND"
     " ", " ", "AI0+", "AI", "Analog Input 16-bit ADC [0-10V / 0-20mA]"
     " ", " ", "AI0-", "AI", "Analog Input 16-bit ADC [0-10V / 0-20mA]"
