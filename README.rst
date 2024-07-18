@@ -25,7 +25,11 @@ Installation from GitHub
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Download the ``mela`` library from the repository
 https://github.com/gmecc/mela/tree/main/firmware
-and install it on MELA-board.
+and install it on MELA-board:
+
+.. code-block:: python
+
+   python -m esptool --chip esp32s3 -p com38 write_flash -z 0 <name_firmware>.bin
 
 
 Installing firmware with the ``mela`` library
