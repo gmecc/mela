@@ -63,7 +63,7 @@ For your convenience, below are some technical characteristics of ``MELA-board``
 - Reset: Outer Reset Pin
 - Power: 5-24V 200mW Power Pin / 5V 500mA USB
 
-[x] OK - Open Collector Output
+The board can be powered from a USB connector with a voltage of 5 volts.
 
 For more information see the MELA-board datasheet:
 https://github.com/gmecc/mela/blob/main/images/board-env.jpg
