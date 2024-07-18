@@ -27,18 +27,26 @@ Download the ``mela`` library from the repository
 https://github.com/gmecc/mela/tree/main/firmware
 and install it on MELA-board:
 
-.. code-block:: python
-
-   python -m esptool --chip esp32s3 -p <port> write_flash -z 0 <name_firmware>.bin
 
 
 Installing firmware with the ``mela`` library
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Download and install new firmware for ``MELA-board``:
+Download new firmware for ``MELA-board``:
 
 https://github.com/gmecc/mela/blob/main/firmware/ESP32_GENERIC.bin
 
+Clear controller memory:
+
+.. code-block:: python
+
+   python -m esptool --chip esp32-s3 erase_flash
+
+Install new firmware:
+
+.. code-block:: python
+
+   python -m esptool --chip esp32s3 -p <port> write_flash -z 0 <name_firmware>.bin
 
 
 Classes
