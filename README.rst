@@ -123,10 +123,9 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
     "37", "TXD0", "TX0", "IsIO", "UART0 TX"
     "38", "IO2", "MISO1", "IsIO", "I2C1 MISO"
     "39", "IO1", "MOSI1", "IsIO", "I2C1 MOSI"
-    "40", "GND", " ", " ", " "
+    "40", "GND", "GND", " ", "GND"
     " ", " ", "USB", "P", "VCC [5V 500mA]"
     " ", " ", "VCC", "P", "VCC [5-24V 200mW]"
-    " ", " ", "GND", " ", "GND"
 
 
 * *I0*: Input/Output TTL;
