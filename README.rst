@@ -43,7 +43,7 @@ For your convenience, below are some technical characteristics of ``MELA-board``
 
 - Processor: Espressif ESP32-S3R16V
     - Architecture: Xtensa Dual-Core 32-bit LX7
-    - Processor: RISC-V Ultra Low Power Co-processor
+    - RISC-V Ultra Low Power Co-processor
     - CPU frequency: up to 240MHz
     - Internal FlashROM: 16MB
     - External FlashROM: Octal SPI PSRAM 8MB
