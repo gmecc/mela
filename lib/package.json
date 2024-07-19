@@ -1,0 +1,10 @@
+{
+  "urls": [
+    ["mela/__init__.py", "github:Linnaar/mela_example/mela/__init__.py"],
+    ["mela/version.py", "github:Linnaar/mela_example/mela/version.py"],
+    ["mela/mela.py", "github:Linnaar/mela_example/mela/mela.py"]
+  ],
+  "deps": [
+  ],
+  "version": "0.0.1"
+}
