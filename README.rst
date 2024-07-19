@@ -41,12 +41,13 @@ For your convenience, below are some technical characteristics of ``MELA-board``
 
 **MELA F1**
 
-- Architecture: Xtensa Dual-Core 32-bit LX7
-- Processor: RISC-V Ultra Low Power Co-processor
-- CPU frequency: up to 240MHz
-- Internal FlashROM: 32MB
-- External FlashROM: Octal SPI PSRAM 8MB
-- WiFi: 2.4GHz Wifi - 802.11b/g/n, 3D High Gain Antenna
+- Processor: Espressif ESP32-S3R16V
+    - Architecture: Xtensa Dual-Core 32-bit LX7
+    - Processor: RISC-V Ultra Low Power Co-processor
+    - CPU frequency: up to 240MHz
+    - Internal FlashROM: 16MB
+    - External FlashROM: Octal SPI PSRAM 8MB
+    - WiFi: 2.4GHz Wifi - 802.11b/g/n, 3D High Gain Antenna
 - RTC: DS1307 with a CR1220 coin cell battery
 - ADC: 16-bit delta-sigma ADC ADS1115 up to 4 differentials channels 860SPS [0-10V / 0-20mA]
 - Digital Input: 6 Digital Isolated Input [0-24V]
