@@ -145,3 +145,6 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
 * *T*: High Impedance Isolated Input (PULL APP);
 * *P*: Power supply;
 * *AI*: Analog Input
+
+About the authors
+-----------------
