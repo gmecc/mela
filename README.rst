@@ -1,10 +1,10 @@
 General information about the MELA board
 ========================================
 
-``MELA-board`` является контроллером  на основе ``Python-платформы``
-с открытым кодом для промышленного использования и проектов IoT.
+``MELA-board`` является контроллером с открытым кодом на основе
+``Python`` для промышленного использования и проектов IoT.
 
-``MELA-board`` выполнена на основе микроконтроллера ESP32-S3 N32R8V Flash 32 MB
+``MELA-board`` выполнена на основе микроконтроллера ESP32-S3 N32R8V Flash 16 MB
 PSRAM 8 MB частота 240 MHz.
 
 ``MELA-board`` для управления внешними устройствами имеет изолированные входы-выходы,
@@ -41,7 +41,7 @@ For your convenience, below are some technical characteristics of ``MELA-board``
 
 **MELA F1**
 
-- Processor: Espressif ESP32-S3R16V
+- Processor: Espressif ESP32-S3R16V:
     - Architecture: Xtensa Dual-Core 32-bit LX7
     - RISC-V Ultra Low Power Co-processor
     - CPU frequency: up to 240MHz
@@ -59,7 +59,7 @@ For your convenience, below are some technical characteristics of ``MELA-board``
 - SPI: 2 SPI
 - RS-232: UART1
 - RS-485: UART2
-- Board Indicator: Low power RGB LED PL9823-F5
+- Board Indicator: Low power RGB LED PL9823
 - Control: ON/OFF button
 - Reset: Outer Reset Pin
 - Boot: Outer Boot Pin
@@ -73,6 +73,8 @@ https://github.com/gmecc/mela/blob/main/images/board-env.jpg
 MicroPython is implemented on top of the ESP-IDF, Espressif’s development framework for the ESP32.
 This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
 
+GPIO table
+----------
 
 .. csv-table:: GPIO
     :header: "Pin", "GPIO", "BOARD", "Type", "Function"
