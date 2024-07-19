@@ -148,3 +148,4 @@ This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
 
 About the authors
 -----------------
+Sergey Besedin, Andry Goloborodko, Oleg Wizner
