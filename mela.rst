@@ -23,10 +23,11 @@ Install the ``mela`` library from the ``mip`` repository:
 
 Installation from GitHub
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Download the ``mela`` library from the repository
-https://github.com/gmecc/mela/tree/main/firmware
-and install it on MELA-board:
+Download the ``mela`` library from the repository. Run this command to install
 
+.. code-block:: python
+
+   mpremote mip install github:Linnaar/mela_example
 
 
 Installing firmware with the ``mela`` library
@@ -79,3 +80,14 @@ Classes
 * ``RS-485`` - обмен даммыми через порт RS-485
 * ``Memory`` - информация о памяти
 * ``Set`` - настройка параметров работы контроллера
+
+
+Usage
+-----
+
+.. code-block:: python
+
+   from mela import Mela
+   plc=Mela()
+   print(plc.info.free)
+
