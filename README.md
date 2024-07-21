@@ -1,4 +1,4 @@
-# General information about the MELA board
+# General information about the MELA-board
 
 ``MELA-board`` является контроллером с открытым кодом на основе
 ``Python`` для промышленного использования и проектов IoT.
