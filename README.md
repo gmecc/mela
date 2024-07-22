@@ -60,11 +60,11 @@ For your convenience, below are some technical characteristics of ``MELA-board``
 - RS-232: UART1
 - RS-485: UART2
 - Board Indicator: Low power RGB LED PL9823 совместимая
-- Reset: ON/OFF button, Outer Reset Pin
-- Boot: ON/OFF button, Outer Boot Pin
-- Power: 5-24V 200mW Power Pin / 5V 500mA USB
+- Reset: ON/OFF button, Outer Reset Connector
+- Boot: ON/OFF button
+- Power: 10-24V 4W Power Pin / 5V 800mA USB
 
-The board can be powered from a USB connector with a voltage of 5 volts.
+The board can be powered from a USB connectors with a voltage of 5 volts.
 
 For more information see the MELA-board datasheet:
 https://github.com/gmecc/mela/blob/main/images/board-env.jpg
