@@ -1,6 +1,6 @@
 # General information about the MELA-board
 
-![mela-board](images/mela-board.jpg)
+![mela-board](images/mela-board.webp)
 
 
 ``MELA-board`` является контроллером с открытым кодом на основе
