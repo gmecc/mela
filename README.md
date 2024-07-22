@@ -57,7 +57,6 @@ For your convenience, below are some technical characteristics of ``MELA-board``
 - USB: USB CH340 + USB OTG + USB JTAG
 - UART: 3 RX/TX UART
 - I2C: 2; I2C-1 Isolated input
-- SPI: 2 SPI
 - RS-232: UART1
 - RS-485: UART2
 - Board Indicator: Low power RGB LED PL9823
