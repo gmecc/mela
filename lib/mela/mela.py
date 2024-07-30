@@ -82,3 +82,21 @@ class Mela_info:
     T = F+A
     P = '{0:.2f}%'.format(F/T*100)
     return ('RAM: Total:{0} bytes Free:{1} bytes ({2})'.format(T,F,P))
+
+  def wlan_scan(self):
+    import network
+    try:
+      sta_if=network.WLAN(network.STA_IF)
+      sta_if.active(True)
+      print("WLAN interface activated. Starting scan...")      
+      wlans=sta_if.scan()
+      AUTHMODE = {0: "open", 1: "WEP", 2: "WPA-PSK", 3: "WPA2-PSK", 4: "WPA/WPA2-PSK"}
+      count=0
+      for ssid, bssid, channel, rssi, authmode, hidden in sorted(wlans, key=lambda x: x[3], reverse=True):
+        count=count+1
+        ssid = ssid.decode('utf-8')
+        encrypted = authmode > 0
+        print("%d ssid: %s chan: %d rssi: %d authmode: %s" % (count, ssid, channel, rssi, AUTHMODE.get(authmode, '?')))
+    except:
+      print('WLAN connection problem')
+        
