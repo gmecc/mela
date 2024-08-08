@@ -67,8 +67,13 @@ python -m esptool --chip esp32s3 -p <port> write_flash -z 0 <name_firmware>.bin
 * ``Indicator`` - 7 segment indicator
 * ``Potentiometer`` - working with an external potentiometer
 * ``Data`` - working with data
-* ``I2C`` - dummy exchange via I2C protocol
-* ``SPI`` - dummy exchange via SPI protocol
+* ``Logging`` - having the logging
+* ``Modbus`` - exchange via `modbus RTU/TCP` protocol
+* ``CAN`` - exchange via `CAN` protocol
+* ``Ethernet`` - exchange via `Ethernet/IP-CIP` protocol 
+* ``ML`` - machine learning
+* ``I2C`` - exchange via I2C protocol
+* ``SPI`` - exchange via SPI protocol
 * ``RS-232`` - data exchange via RS-232 port
 * ``RS-485`` - data exchange via RS-485 port
 * ``Memory`` - memory information
