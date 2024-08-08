@@ -70,7 +70,7 @@ python -m esptool --chip esp32s3 -p <port> write_flash -z 0 <name_firmware>.bin
 * ``Logging`` - having the logging
 * ``Modbus`` - dummy exchange via `modbus RTU/TCP` protocol
 * ``CAN`` - dummy exchange via `CAN` protocol
-* ``Ethernet`` - exchange via `Ethernet/IP-CIP` protocol 
+* ``Ethernet`` - dummy exchange via `Ethernet/IP-CIP` protocol 
 * ``ML`` - machine learning
 * ``I2C`` - dummy exchange via I2C protocol
 * ``SPI`` - dummy exchange via SPI protocol
