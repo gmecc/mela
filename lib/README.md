@@ -10,9 +10,7 @@ Run this command to install `mpremote mip install github:Linnaar/mela_example`
 Example of usage:
 
 ```
-
 from mela import Mela
 plc=Mela()
 print(plc.info.free)
-
 ```
