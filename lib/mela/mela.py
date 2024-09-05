@@ -13,18 +13,24 @@ class Mela:
     self.config=Mela_config()
     self.rtc=Mela_rtc()
     
+    self.wifi=False 
+    if self.config.wifi['connect_on_boot']:
+      self.wlan_connect()      
     
     self.modbus_slave485=False
     self.modbus_master485=False
+    self.modbus_slaveTCP=False
+    self.modbus_masterTCP=False
     if self.config.modbus['connect_type']=='slave485':              
       self.modbus_slave485=Mela_modbus_slave485(config=self.config.modbus_slave485)
     elif self.config.modbus['connect_type']=='master485':
       self.modbus_master485=Mela_modbus_master485(config=self.config.modbus_master485)
+    elif self.config.modbus['connect_type']=='slaveTCP':              
+      self.modbus_slaveTCP=Mela_modbus_slaveTCP(config=self.config.modbus_slaveTCP,wifi=self.wifi)
+    elif self.config.modbus['connect_type']=='masterTCP':
+      self.modbus_masterTCP=Mela_modbus_masterTCP(config=self.config.modbus_masterTCP,wifi=self.wifi)
     
-    self.wifi=False 
-    if self.config.wifi['connect_on_boot']:
-      self.wlan_connect()
-      
+          
 #********************************************************************      
   def wlan_disconnect(self):
     import network
@@ -43,6 +49,7 @@ class Mela:
     sta_if.active(True)
     if sta_if.isconnected():
       print('WLAN already connected. Board IP: %s' % sta_if.ifconfig()[0])
+      self.wifi=sta_if
       return True  
     try:
       wlan_found=False
@@ -50,15 +57,17 @@ class Mela:
       wlans=self.info.wlan_scan(False)
       for ssid, bssid, channel, rssi, authmode, hidden in sorted(wlans, key=lambda x: x[3], reverse=True):        
         ssid = ssid.decode('utf-8')
-        if ssid==self.config.wifi['networks'][0]['ssid']:
+        ssid_cf=[wlan for wlan in self.config.wifi['networks'] if wlan['ssid']==ssid]
+        if ssid_cf!=[]:
           print("WLAN ssid: %s found at chan: %d rssi: %d bssid: %s" % (ssid, channel, rssi, bssid.hex('-')))
           wlan_found=True
+          break
       if not wlan_found:
-        print("WLAN %s not found!" % self.config.wifi['networks'][0]['ssid'])
+        print("WLAN not found!")
         return False
       print('Trying to connect...')
       start = time.ticks_ms()
-      sta_if.connect(self.config.wifi['networks'][0]['ssid'],self.config.wifi['networks'][0]['key'])
+      sta_if.connect(ssid_cf[0]['ssid'],ssid_cf[0]['key'])
       for _ in range(10000):
         if sta_if.isconnected():
           print('\nConnected! Time: %d ms. Board IP: %s' % (time.ticks_diff(time.ticks_ms(), start), sta_if.ifconfig()[0]))
@@ -106,6 +115,16 @@ class Mela_config:
     return self.data['config']['modbus']['master485']
 
 #********************************************************************
+  @property
+  def modbus_slaveTCP(self):
+    return self.data['config']['modbus']['slaveTCP']
+
+#********************************************************************
+  @property
+  def modbus_masterTCP(self):
+    return self.data['config']['modbus']['masterTCP']
+
+#********************************************************************
   def load_config(self):
     import ujson as json
     
@@ -116,7 +135,7 @@ class Mela_config:
       print("Failed reading configuration file. Returning default configuration.")
       return {'config': {
           'wifi': {'connect_on_boot': False, 'networks': [{'ssid': 'LAN', 'key': '12345'}]},
-          'modbus': {'connect_type':False, 'slave485':{'load_definitions_from_config':True, 'address': 10, 'baudrate': 9600, 'data_bits': 8, 'stop_bits': 1, 'parity': None, 'register_definitions':{ "IREGS": {"TIMESTAMP": {"register": 1,"len": 2,"val": 0}, "FREE_RAM": {"register": 3,"len": 1,"val": 0},"FREE_VFS": {"register": 4,"len": 1,"val": 0} } }}, 'master485':{'baudrate': 9600, 'data_bits': 8, 'stop_bits': 1, 'parity': None } }
+          'modbus': {'connect_type':False, 'slave485':{'load_definitions_from_config':True, 'address': 10, 'baudrate': 9600, 'data_bits': 8, 'stop_bits': 1, 'parity': None, 'register_definitions':{ "IREGS": {"TIMESTAMP": {"register": 1,"len": 2,"val": 0}, "FREE_RAM": {"register": 3,"len": 1,"val": 0},"FREE_VFS": {"register": 4,"len": 1,"val": 0} } }}, 'master485':{'baudrate': 9600, 'data_bits': 8, 'stop_bits': 1, 'parity': None }, 'slaveTCP':{'load_definitions_from_config':True, 'port': 502, 'register_definitions':{ "IREGS": {"TIMESTAMP": {"register": 1,"len": 2,"val": 0}, "FREE_RAM": {"register": 3,"len": 1,"val": 0},"FREE_VFS": {"register": 4,"len": 1,"val": 0} } }}, 'masterTCP':{'port': 502, 'slave_ip': False, 'timeout': 5} }
           }
       } 
 
@@ -275,3 +294,44 @@ class Mela_modbus_master485:
           ctrl_pin=7,          # optional, control DE/RE
           uart_id=1         # optional, default 1, see port specific documentation
     )
+
+    
+#--------------------------------------------------------------------
+#
+#    Modbus SlaveTCP class 
+#
+#--------------------------------------------------------------------
+class Mela_modbus_slaveTCP:
+  def __init__(self,config=False, wifi=False):
+    from umodbus.tcp import ModbusTCP   
+    
+    if wifi==False:
+      print("Error. Wifi not connected.")
+      self.connection=False
+    else:
+      self.connection = ModbusTCP()
+      if not self.connection.get_bound_status():
+        self.connection.bind(local_ip=wifi.ifconfig()[0], local_port=config['port'])
+
+      if config['load_definitions_from_config']:
+        self.connection.setup_registers(registers=config['register_definitions'])
+      
+
+#--------------------------------------------------------------------
+#
+#    Modbus MasterTCP class 
+#
+#--------------------------------------------------------------------
+class Mela_modbus_masterTCP:
+  def __init__(self,config=False, wifi=False):
+    from umodbus.tcp import TCP as ModbusTCPMaster 
+    
+    if wifi==False:
+      print("Error. Wifi not connected.")
+      self.connection=False
+    else:     
+      self.connection = ModbusTCPMaster(
+        slave_ip=config['slave_ip'],
+        slave_port=config['port'],
+        timeout=config['timeout']               # optional, timeout in seconds, default 5.0
+      )

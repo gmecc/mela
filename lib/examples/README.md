@@ -40,3 +40,29 @@ Initialises Modbus RTU master  at 485 interface and start polling data from slav
 
 __config.json__  
 Contains Modbus RTU master configuration.
+
+## 02.Modbus TCP
+Contains two directories for two Mela boards. Master and Slave boards are connected via WLAN interface. You must fill in slave IP address in master configuration.json, and correct WLAN configuration on both boards.
+
+### Slave
+
+__boot.py__  
+Sample boot file which loads mela library and initialize object "plc" from Mela class. The examples in this repo require this object. 
+
+__main.py__  
+Initialises Modbus TCP slave at port 502 and loads register definitions. In this example we use 3 input registers, which contains current datetime, free RAM and VFS percentage. Data in registers updates evary 1 second vith Timer callback function. You need to set up 
+
+__config.json__  
+Contains Modbus RTU slave configuration.
+
+
+### Master
+
+__boot.py__  
+Sample boot file which loads mela library and initialize object "plc" from Mela class. The examples in this repo require this object. 
+
+__main.py__  
+Initialises Modbus TCP master and start polling data from slave with 10 seconds interval. You must fill in slave IP address in master configuration.json, and correct WLAN configuration on both boards.
+
+__config.json__  
+Contains Modbus RTU master configuration.
