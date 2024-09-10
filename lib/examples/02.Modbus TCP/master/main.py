@@ -12,5 +12,14 @@ while True:
   except KeyboardInterrupt:
     print('KeyboardInterrupt, stopping TCP master...')
     break
-  except Exception as e:
+  except Exception as e:      
+    if e.value=="wrong transaction ID":
+      print("TR ID lost")
+      plc.modbus_masterTCP.connection=plc.modbus_masterTCP.reconnect(plc.config.modbus_masterTCP,plc.wifi)
+    elif e.value==116:
+      print("ETIMEDOUT")
+      plc.modbus_masterTCP.connection=plc.modbus_masterTCP.reconnect(plc.config.modbus_masterTCP,plc.wifi)
+    elif e.value==128:
+      print("ENOTCONN")
+      plc.modbus_masterTCP.connection=plc.modbus_masterTCP.reconnect(plc.config.modbus_masterTCP,plc.wifi)
     print('Exception during execution: {}'.format(e))

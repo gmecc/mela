@@ -324,14 +324,18 @@ class Mela_modbus_slaveTCP:
 #--------------------------------------------------------------------
 class Mela_modbus_masterTCP:
   def __init__(self,config=False, wifi=False):
+    self.connection=self.reconnect(config,wifi)
+      
+  def reconnect(self,config=False, wifi=False):
     from umodbus.tcp import TCP as ModbusTCPMaster 
     
     if wifi==False:
       print("Error. Wifi not connected.")
-      self.connection=False
+      connection=False
     else:     
-      self.connection = ModbusTCPMaster(
+      connection = ModbusTCPMaster(
         slave_ip=config['slave_ip'],
         slave_port=config['port'],
         timeout=config['timeout']               # optional, timeout in seconds, default 5.0
       )
+    return connection
