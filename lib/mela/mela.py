@@ -362,7 +362,7 @@ class MelaRTC:
         from ds1307 import DS1307
         from machine import SoftI2C, Pin
         import utime as time
-        
+
         i2c = SoftI2C(scl=Pin(4), sda=Pin(5), freq=800000)
         self.__ds1307_rtc = DS1307(addr=0x68, i2c=i2c)
 
@@ -391,6 +391,8 @@ class MelaRTC:
 
         :return: Current Unix time.
         """
+        import utime as time
+
         return time.mktime(self.now_raw) + 946684800
 
     @property
@@ -400,6 +402,8 @@ class MelaRTC:
 
         :return: Current Unix time for embedded boards.
         """
+        import utime as time
+
         return time.mktime(self.now_raw)
 
 #--------------------------------------------------------------------
