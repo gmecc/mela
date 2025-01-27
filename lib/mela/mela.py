@@ -28,6 +28,10 @@ class Mela:
         self.modbus_master485 = None
         self.modbus_slaveTCP = None
         self.modbus_masterTCP = None
+        self.mqtt = None
+
+        if self.config.mqtt['connect_on_boot']:
+            self.mqtt=MelaMQTT(config=self.config.mqtt, wifi=self.wifi)
 
         connect_type = self.config.modbus['connect_type']
         if connect_type == 'slave485':
@@ -181,6 +185,15 @@ class MelaConfig:
         :return: Modbus Master TCP configuration dictionary.
         """
         return self.data['config']['modbus']['masterTCP']
+    
+    @property
+    def mqtt(self) -> Dict[str, Any]:
+        """
+        Get the MQTT Client configuration.
+
+        :return: MQTT Client configuration dictionary.
+        """
+        return self.data['config']['mqtt']
 
     def load_config(self) -> Dict[str, Any]:
         """
@@ -193,7 +206,7 @@ class MelaConfig:
         try:
             with open('config.json', 'r') as settings_file:
                 return json.load(settings_file)
-        except (OSError, json.JSONDecodeError) as e:
+        except Exception as e:
             print('Failed reading configuration file: {}. Returning default configuration.'.format(e))
             return {
                 'config': {
@@ -228,8 +241,9 @@ class MelaConfig:
                             }
                         },
                         'masterTCP': {'port': 502, 'slave_ip': False, 'timeout': 5, 'always_reconnect': False}
-                    }
-                }
+                    },
+                    'mqtt': {'connect_on_boot': False, 'broker': '192.168.1.40','client_id': 'esp32a0', 'user': 'sensor1', 'password': '123456qaz','always_reconnect': False}
+                }                
             }
 
     def save_config(self) -> bool:
@@ -357,7 +371,7 @@ class MelaRTC:
 
     def __init__(self):
         """
-        Initialize the DS1307 RTC module.
+        Initialize the DS1307 RTC module. (38-39)
         """
         from ds1307 import DS1307
         from machine import SoftI2C, Pin
@@ -523,7 +537,7 @@ class MelaModbusMasterTCP:
         Initialize the Modbus TCP master with the given configuration and wifi status.
 
         :param config: Configuration dictionary containing 'slave_ip', 'port', 'timeout', and 'always_reconnect'.
-        :param wifi: Boolean indicating if wifi is connected.
+        :param wifi: Wifi connection object.
         """
         if config is None:
             raise ValueError('Error. Configuration is required.')
@@ -531,13 +545,13 @@ class MelaModbusMasterTCP:
         self.connection = self.reconnect(config, wifi)
 
 
-    def reconnect(self, config: dict = None, wifi: bool = False) -> bool:
+    def reconnect(self, config: dict = None, wifi: bool = False):
         """
         Reconnect to the Modbus TCP slave.
 
         :param config: Configuration dictionary containing 'slave_ip', 'port', and 'timeout', and 'always_reconnect'.
-        :param wifi: Boolean indicating if wifi is connected.
-        :return: Connection status.
+        :param wifi: Wifi connection object.
+        :return: Connection handler.
         """
         from umodbus.tcp import TCP as ModbusTCPMaster
         import utime as time
@@ -558,6 +572,71 @@ class MelaModbusMasterTCP:
             return connection
           except Exception as e:
             print('Error reconnecting to slave. {}'.format(e))
+            if not config.get('always_reconnect', False):
+              raise
+            print('Retrying in 5 seconds...')
+            time.sleep(5)  # Optional: wait before retrying
+
+
+#--------------------------------------------------------------------
+#
+#    Modbus MasterTCP class
+#
+#--------------------------------------------------------------------            
+class MelaMQTT:
+    """
+    A class to manage MQTT connections.
+    """
+    def __init__(self, config: dict = None, wifi: bool = False):
+        """
+        Initialize the MQTT connection to broker with the given configuration and wifi status.
+
+        :param config: Configuration dictionary containing 'broker', 'client_id', and 'user/password', and 'always_reconnect'.
+        :param wifi: Wifi connection object.
+        """
+        self.connection = self.connect(config, wifi)
+        self.__always_reconnect=config.get('always_reconnect', False)
+
+
+    def send(self, topic, data):
+        """
+        Send data to a specified MQTT topic.
+
+        Args:
+            topic (str): The MQTT topic to publish to.
+            data (str): The data to publish.
+        """
+        import utime as time
+
+        self.connection.reconnect()
+        self.connection.ping()
+        self.connection.publish(topic, data, qos=0)
+        time.sleep(0.1)
+
+    def connect(self, config: dict = None, wifi: bool = False):
+        """
+        Connect to the MQTT broker.
+
+        :param config: Configuration dictionary containing 'broker', 'client_id', and 'user/password', and 'always_reconnect'.
+        :param wifi: Wifi connection object.
+        :return: Connection handler.
+        """
+        from umqtt.simple import MQTTClient
+        import utime as time
+
+        if not wifi:
+            raise ConnectionError('Error. Wifi not connected.')
+
+        if config is None:
+            raise ValueError('Error. Configuration is required.')
+        
+        while True:
+          try:
+            connection = MQTTClient(config['client_id'], config['broker'], 1883, user=config['user'], password=config['password'])
+            connection.connect()
+            return connection
+          except Exception as e:
+            print('Error reconnecting to MQTT broker. {}'.format(e))
             if not config.get('always_reconnect', False):
               raise
             print('Retrying in 5 seconds...')
